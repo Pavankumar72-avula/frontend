@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import Nav from "./Nav"; // Ensure file exists
+import NavBar from "./NavBar"; // Ensure file exists
 import { Eye, EyeOff, Mail } from "lucide-react";
 
 const SignUp = () => {
@@ -71,7 +71,7 @@ const SignUp = () => {
 
   return (
     <div className="bg-gray-100 min-h-screen gap-5 flex flex-col">
-      <Nav />
+      <NavBar />
       <div className="flex justify-center pt-5">
         <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-blue-600">
           Join BlogVerse
@@ -142,10 +142,11 @@ const SignUp = () => {
                 {showPassword ? <EyeOff /> : <Eye />}
               </span>
             </div>
-  {errors.password && <p className="text-red-500">{errors.password}</p>}
-</div>
-{/* Confirm Password */}
-<div className="w-[90%] flex flex-col gap-2 relative">
+            {errors.password && <p className="text-red-500">{errors.password}</p>}
+          </div>
+
+          {/* Confirm Password */}
+          <div className="w-[90%] flex flex-col gap-2 relative">
             <p className="text-md text-gray-700 font-semibold">Confirm Password</p>
             <div className="relative">
               <input
